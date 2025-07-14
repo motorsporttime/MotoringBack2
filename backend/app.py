@@ -1,9 +1,8 @@
 from flask import Flask, jsonify
-import logging
+from flask_cors import CORS
 
 app = Flask(__name__)
-logging.basicConfig(level=logging.INFO)
-app.logger.info("Flask app started successfully.")
+CORS(app)  # Enable CORS for all routes
 
 @app.route('/api/schedule')
 def schedule():
